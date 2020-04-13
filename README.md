@@ -1,4 +1,4 @@
-# React-React-App
+# Express-React-Typescript-App
 
 1. cd to client folder
 
