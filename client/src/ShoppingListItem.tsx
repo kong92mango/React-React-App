@@ -1,15 +1,35 @@
 import React from "react";
 import "./ShoppingListItem.css";
+import { prependOnceListener } from "cluster";
 
 interface ShoppingListItemProps {
   purchase: Purchase;
   toggleComplete: ToggleComplete;
+  deleteListItem: DeleteListItem;
+  increaseNumber: IncreaseNumber;
+  decreaseNumber: DecreaseNumber;
 }
 
 export const ShoppingListItem: React.FC<ShoppingListItemProps> = ({
   purchase,
-  toggleComplete
+  toggleComplete,
+  deleteListItem,
+  increaseNumber,
+  decreaseNumber
 }) => {
+  const { unit, name, quantity } = purchase
+  let output = ""
+  if (unit != "") {
+    output = `${quantity} ${unit} of ${name}`
+  } else {
+    if (quantity > 1) {
+      output = `${name} (${quantity})`
+    }
+    else {
+      output = name
+    }
+  }
+
   return (
     <li>
       <label className={purchase.complete ? "complete" : undefined}>
@@ -18,7 +38,9 @@ export const ShoppingListItem: React.FC<ShoppingListItemProps> = ({
           onChange={() => toggleComplete(purchase)}
           checked={purchase.complete}
         />
-        {purchase.text}
+        {output} <button onClick={() => deleteListItem(purchase)}>Delete</button>
+        <button onClick={() => decreaseNumber(purchase)}>-</button>
+        <button onClick={() => increaseNumber(purchase)}>+</button>
       </label>
     </li>
   );
