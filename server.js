@@ -2,14 +2,22 @@ const express = require('express');
 
 const app = express();
 
-app.get('/api/customers', (req, res) => {
-  const customers = [
-    {id: 1, firstName: 'John', lastName: 'Doe'},
-    {id: 2, firstName: 'Brad', lastName: 'Traversy'},
-    {id: 3, firstName: 'Mary', lastName: 'Swanson'},
+app.get('/api/shoppingList', (req, res) => {
+  const shoppingList = [
+    {
+      name: "Milk",
+      quantity: 1,
+      complete: false,
+      unit: "litre"
+    },
+    {
+      name: "Eggs",
+      quantity: 11,
+      complete: false,
+      unit: "dozen"
+    }
   ];
-
-  res.json(customers);
+  res.json(shoppingList);
 });
 
 const port = 5000;

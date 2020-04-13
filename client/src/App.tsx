@@ -1,9 +1,23 @@
-import React, { useState } from "react";
-import { initialPurchases } from "./initialPurchases";
+import React, { useState, useEffect } from "react";
+import { api, initialPurchases } from "./initialPurchases";
 import { ShoppingList } from "./ShoppingList";
 import { AddListItemForm } from "./AddListItemForm";
 
+
 const App: React.FC = () => {
+
+  // nothing triggers useEffect so it runs only once to get the shopping list from server
+  useEffect(() => {
+    api<Purchase[]>('/api/shoppingList')
+    .then((item) => {
+      console.log(item);
+      setPurchases(item);
+    })
+    .catch(error => {
+      return error
+    })
+  }, []);
+
   const [purchases, setPurchases] = useState<Array<Purchase>>(initialPurchases);
 
   const toggleComplete: ToggleComplete = selectedPurchase => {

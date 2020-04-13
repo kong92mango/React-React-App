@@ -6,7 +6,7 @@ interface ShoppingListProps {
   toggleComplete: ToggleComplete;
   deleteListItem: DeleteListItem;
   increaseNumber: IncreaseNumber;
-  decreaseNumber: DecreaseNumber;  
+  decreaseNumber: DecreaseNumber;
 }
 
 export const ShoppingList: React.FC<ShoppingListProps> = ({
