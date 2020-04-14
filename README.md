@@ -1,6 +1,6 @@
 # Express-React-Typescript-App
 
-1. cd to client folder
+1. cd into root folder
 
 2. npm install
 

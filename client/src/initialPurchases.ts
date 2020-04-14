@@ -1,15 +1,15 @@
 export const initialPurchases: Array<Purchase> = [
   {
-    name: "Milk",
+    name: "Ham",
     quantity: 3,
     complete: false,
-    unit: "litre"
+    unit: "kg"
   },
   {
-    name: "Eggs",
+    name: "Bacon",
     quantity: 3,
     complete: false,
-    unit: "dozen"
+    unit: "pack"
   }
 ];
 
