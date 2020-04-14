@@ -1,6 +1,5 @@
 import React from "react";
-import "./ShoppingListItem.css";
-import { prependOnceListener } from "cluster";
+import "./style.css";
 
 interface ShoppingListItemProps {
   purchase: Purchase;
@@ -19,7 +18,7 @@ export const ShoppingListItem: React.FC<ShoppingListItemProps> = ({
 }) => {
   const { unit, name, quantity } = purchase
   let output = ""
-  if (unit != "") {
+  if (unit.trim() !== "") {
     output = `${quantity} ${unit} of ${name}`
   } else {
     if (quantity > 1) {
