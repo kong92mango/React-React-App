@@ -1,0 +1,31 @@
+button {
+  border: none;
+  font-size: 1.3rem;
+  border-bottom: 4px solid #ccc;
+  margin-left: .5rem;
+  cursor: pointer;
+  color: #5e5e5e;
+}
+
+body {
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  background-color: lightgoldenrodyellow;
+  text-align: center
+}
+
+li {
+  list-style-type: none;
+  vertical-align: middle;
+  text-align: left;
+}
+
+div {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.complete {
+  text-decoration: line-through;
+}

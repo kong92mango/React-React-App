@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { api, initialPurchases } from "./initialPurchases";
 import { ShoppingList } from "./ShoppingList";
 import { AddListItemForm } from "./AddListItemForm";
-
+import "./style.css";
 
 const App: React.FC = () => {
 
@@ -72,7 +72,10 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-      <ShoppingList purchases={purchases} toggleComplete={toggleComplete} deleteListItem={deleteListItem} increaseNumber={increaseNumber} decreaseNumber={decreaseNumber} />
+      <h1>Kong's Shopping List App</h1>
+      <div>
+        <ShoppingList purchases={purchases} toggleComplete={toggleComplete} deleteListItem={deleteListItem} increaseNumber={increaseNumber} decreaseNumber={decreaseNumber} />
+      </div>
       <AddListItemForm addListItem={addListItem} />
     </React.Fragment>
   );
