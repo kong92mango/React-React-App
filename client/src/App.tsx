@@ -48,7 +48,7 @@ const App: React.FC = () => {
   const increaseNumber: IncreaseNumber = selectedPurchase => {
     const updatedPurchases = purchases.map(purchase => {
       if (purchase === selectedPurchase) {
-        return { ...purchase, quantity: purchase.quantity + 1 };
+        return { ...purchase, quantity: parseInt(purchase.quantity) + 1 };
       }
       return purchase;
     });

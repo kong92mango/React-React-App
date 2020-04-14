@@ -11,7 +11,6 @@ export const AddListItemForm: React.FC<AddListItemFormProps> = ({ addListItem })
   // form validation
 
   const onSubmit = handleSubmit(({ name, quantity, unit }) => {
-    console.log("triggered");
     addListItem(name, quantity, unit);
     reset();
   });

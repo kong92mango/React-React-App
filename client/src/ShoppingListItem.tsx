@@ -37,10 +37,10 @@ export const ShoppingListItem: React.FC<ShoppingListItemProps> = ({
           onChange={() => toggleComplete(purchase)}
           checked={purchase.complete}
         />
+      </label>
         {output} <button onClick={() => deleteListItem(purchase)}>Delete</button>
         <button onClick={() => decreaseNumber(purchase)}>-</button>
         <button onClick={() => increaseNumber(purchase)}>+</button>
-      </label>
     </li>
   );
 };
